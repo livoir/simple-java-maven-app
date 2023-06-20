@@ -1,4 +1,5 @@
 node {
+    checkout scm
     docker.image('maven:3.9.0').inside('--net=host') { c ->
         stage('Build') {
             sh 'pwd'
