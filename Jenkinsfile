@@ -1,6 +1,6 @@
 node {
     checkout scm
-    docker.image('maven:3.9.0').inside('--net=host') { c ->
+    docker.image('maven:3.9.0').inside('-v /root/.m2:/root/.m2 --net=host') { c ->
         stage('Build') {
             sh 'pwd'
             sh 'ls'
